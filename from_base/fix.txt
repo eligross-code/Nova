@@ -1,0 +1,26 @@
+import json
+
+path = '/Users/eligross/models/Qwen3.5-4B-merged/config.json'
+with open(path) as f:
+    config = json.load(f)
+
+# mlx-lm looks for 'qwen3_5' not 'qwen3_5_text'
+config['model_type'] = 'qwen3_5'
+
+with open(path, 'w') as f:
+    json.dump(config, f, indent=2)
+
+print('Done')
+"
+Done
+
+Somehow, the reason the adapter couldnt be added was it was not in MLX format...so...all you have to do is change the adapter
+to be Qwen3.5 not 3.5 text or whatever, then it can convert no problem to MLX(starting from merged)
+
+
+
+
+//// wack |im_end| thing... I think just end if it comes up... distribes the ending dist.... this seems to be cleaned in the training data
+
+
+///// lwky, ai for data / training data needs to happen.

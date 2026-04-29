@@ -1,0 +1,83 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "Aura-arm64-apple-macosx16.0-release.exe": ["<Aura-arm64-apple-macosx16.0-release.exe>"]
+  "Aura-arm64-apple-macosx16.0-release.module": ["<Aura-arm64-apple-macosx16.0-release.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<Aura-arm64-apple-macosx16.0-release.exe>","<Aura-arm64-apple-macosx16.0-release.module>"]
+  "test": ["<Aura-arm64-apple-macosx16.0-release.exe>","<Aura-arm64-apple-macosx16.0-release.module>"]
+default: "main"
+nodes:
+  "/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/App.swift","/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/Bridge.swift","/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/ChatView.swift","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/DerivedSources/resource_bundle_accessor.swift"]
+    outputs: ["/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/sources"]
+    description: "Write auxiliary file /Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/sources"
+
+  "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/App.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/Bridge.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/ChatView.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/resource_bundle_accessor.swift.o"]
+    outputs: ["/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.product/Objects.LinkFileList"
+
+  "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura_Aura.bundle/aura-lockup.png":
+    tool: copy-tool
+    inputs: ["/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/Resources/aura-lockup.png"]
+    outputs: ["/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura_Aura.bundle/aura-lockup.png"]
+    description: "Copying /Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/Resources/aura-lockup.png"
+
+  "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura_Aura.bundle/aura-mark.png":
+    tool: copy-tool
+    inputs: ["/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/Resources/aura-mark.png"]
+    outputs: ["/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura_Aura.bundle/aura-mark.png"]
+    description: "Copying /Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/Resources/aura-mark.png"
+
+  "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/swift-version--1AB21518FC5DEDBE.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Library/Developer/CommandLineTools/usr/bin/swiftc"]
+    outputs: ["/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/swift-version--1AB21518FC5DEDBE.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/swift-version--1AB21518FC5DEDBE.txt"
+
+  "<Aura-arm64-apple-macosx16.0-release.exe>":
+    tool: phony
+    inputs: ["/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura"]
+    outputs: ["<Aura-arm64-apple-macosx16.0-release.exe>"]
+
+  "<Aura-arm64-apple-macosx16.0-release.module>":
+    tool: phony
+    inputs: ["/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/App.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/Bridge.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/ChatView.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/resource_bundle_accessor.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Modules/Aura.swiftmodule"]
+    outputs: ["<Aura-arm64-apple-macosx16.0-release.module>"]
+
+  "Aura-arm64-apple-macosx16.0-release.module-resources":
+    tool: phony
+    inputs: ["/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura_Aura.bundle/aura-lockup.png","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura_Aura.bundle/aura-mark.png"]
+    outputs: ["<Aura-arm64-apple-macosx16.0-release.module-resources>"]
+
+  "C.Aura-arm64-apple-macosx16.0-release.exe":
+    tool: shell
+    inputs: ["/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/App.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/Bridge.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/ChatView.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/resource_bundle_accessor.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.product/Objects.LinkFileList"]
+    outputs: ["/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura"]
+    description: "Linking ./.build/arm64-apple-macosx/release/Aura"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-L","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release","-o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura","-module-name","Aura","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-dead_strip","-Xlinker","-alias","-Xlinker","_Aura_main","-Xlinker","_main","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.product/Objects.LinkFileList","-target","arm64-apple-macosx13.0","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xlinker","-rpath","-Xlinker","/Library/Developer/CommandLineTools/Library/Developer/Frameworks"]
+
+  "C.Aura-arm64-apple-macosx16.0-release.module":
+    tool: shell
+    inputs: ["/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/App.swift","/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/Bridge.swift","/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/ChatView.swift","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/DerivedSources/resource_bundle_accessor.swift","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/swift-version--1AB21518FC5DEDBE.txt","<Aura-arm64-apple-macosx16.0-release.module-resources>","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/sources"]
+    outputs: ["/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/App.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/Bridge.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/ChatView.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/resource_bundle_accessor.swift.o","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Modules/Aura.swiftmodule"]
+    description: "Compiling Swift Module 'Aura' (4 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","Aura","-emit-dependencies","-emit-module","-emit-module-path","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Modules/Aura.swiftmodule","-output-file-map","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/output-file-map.json","-whole-module-optimization","-num-threads","12","-c","@/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/sources","-I","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Modules","-target","arm64-apple-macosx13.0","-O","-j12","-DSWIFT_PACKAGE","-module-cache-path","/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","Aura_main","-color-diagnostics","-swift-version","5","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g","-package-name","aura_app"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/","/Users/eligross/Desktop/make_agents/aura_app/Package.swift","/Users/eligross/Desktop/make_agents/aura_app/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

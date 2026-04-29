@@ -1,0 +1,27 @@
+{
+  "": {
+    "dependencies": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/Aura.d",
+    "object": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/Aura.o",
+    "swift-dependencies": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/master.swiftdeps"
+  },
+  "/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/App.swift": {
+    "object": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/App.swift.o",
+    "swiftmodule": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/App~partial.swiftmodule",
+    "swift-dependencies": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/App.swiftdeps"
+  },
+  "/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/Bridge.swift": {
+    "object": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/Bridge.swift.o",
+    "swiftmodule": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/Bridge~partial.swiftmodule",
+    "swift-dependencies": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/Bridge.swiftdeps"
+  },
+  "/Users/eligross/Desktop/make_agents/aura_app/Sources/Aura/ChatView.swift": {
+    "object": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/ChatView.swift.o",
+    "swiftmodule": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/ChatView~partial.swiftmodule",
+    "swift-dependencies": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/ChatView.swiftdeps"
+  },
+  "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/DerivedSources/resource_bundle_accessor.swift": {
+    "object": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/eligross/Desktop/make_agents/aura_app/.build/arm64-apple-macosx/release/Aura.build/resource_bundle_accessor.swiftdeps"
+  }
+}
