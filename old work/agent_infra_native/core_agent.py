@@ -4,16 +4,28 @@ import json
 from typing import Any, Dict
 from ollama import chat
 
-from agent_infra_native.tools import (
-    open_app,
-    open_url,
-    list_running_apps,
-    get_frontmost_app,
-    get_datetime,
-    get_battery,
-    notify,
-    build_computer_state,
-)
+try:
+    from agent_infra_native.tools import (
+        open_app,
+        open_url,
+        list_running_apps,
+        get_frontmost_app,
+        get_datetime,
+        get_battery,
+        notify,
+        build_computer_state,
+    )
+except ImportError:
+    from tools import (
+        open_app,
+        open_url,
+        list_running_apps,
+        get_frontmost_app,
+        get_datetime,
+        get_battery,
+        notify,
+        build_computer_state,
+    )
 
 
 

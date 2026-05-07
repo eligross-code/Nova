@@ -3,12 +3,14 @@ import random
 from pathlib import Path
 from datasets import load_dataset
 
+DATA_DIR = Path(__file__).resolve().parent
+
 # --- local source ---
 local_json = Path("/Users/eligross/Downloads/Opus4.6 + opus4.5_reasoning_927x.jsonl")
 
 # --- outputs ---
-out_train = Path("train_merged.jsonl")
-out_eval = Path("eval_merged.jsonl")
+out_train = DATA_DIR / "train_merged.jsonl"
+out_eval = DATA_DIR / "eval_merged.jsonl"
 
 # --- sample sizes ---
 max_traces = 4000              # smolagents/training-traces

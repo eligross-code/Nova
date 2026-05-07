@@ -60,11 +60,11 @@ treats computer state as part of the context window, not as an afterthought.
 
 ## Repo Map
 
-- `agent_infra_native/` native tool-calling agent experiments, desktop context
-  builders, and reasoning-oriented loops.
-- `agent_infra_v1/` earlier orchestration and sub-agent prototypes.
-- `from_base/` MLX model loading, inference, benchmarking, and dataset work.
-- `bs/` wake-word, speech-to-text, and voice agent experiments.
+- `from_base/` the main active workspace for MLX model loading, inference,
+  prompting, and benchmarking experiments.
+- `data/` training and eval datasets plus the dataset-building script moved out
+  of `from_base/`.
+- `old work/` archived agent infrastructure, sub-agent, and voice experiments.
 - `requirements.txt` shared Python dependencies for the local stack.
 
 ## Current Capabilities
@@ -98,28 +98,25 @@ Computer-state builder                                  Sub-agent harnesses
 
 ## Getting Started
 
-Nova is still an experimental workspace, not a polished product. The cleanest
-entrypoint today is the native tool-calling agent.
+Nova is still an experimental workspace, not a polished product. The current
+active area is `from_base/`.
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-ollama pull llama3.1:8b
-ollama pull qwen3.5:4b
-# optional for some experiments
-ollama pull deepseek-r1:8b
-
-python3 agent_infra_native/tool_agents.py
+python3 from_base/main.py
 ```
 
 Useful paths to inspect:
 
-- `agent_infra_native/tool_agents.py` for the native tool-calling loop.
-- `agent_infra_native/core_agent.py` for the reasoning-first agent direction.
-- `bs/voice_agent.py` for wake word -> transcription -> agent experiments.
 - `from_base/main.py` for MLX load-on-demand experiments.
+- `from_base/use_model.py` for local model loading and generation.
+- `data/build_dataset.py` for dataset assembly.
+- `old work/agent_infra_native/` for archived native agent experiments.
+- `old work/bs/voice_agent.py` for archived wake word -> transcription ->
+  agent experiments.
 
 ## Notes
 
