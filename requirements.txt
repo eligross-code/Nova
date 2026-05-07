@@ -6,4 +6,3 @@ selectolax
 peft
 transformers
 mlx-lm
-git+https://github.com/Blaizzy/mlx-vlm.git
