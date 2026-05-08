@@ -15,7 +15,7 @@ print('Done')
 Done
 
 Somehow, the reason the adapter couldnt be added was it was not in MLX format...so...all you have to do is change the adapter
-to be Qwen3.5 not 3.5 text or whatever, then it can convert no problem to MLX(starting from merged)
+to be Qwen3.5 not 3.5_text or whatever, then it can convert no problem to MLX(starting from merged)
 
 
 
