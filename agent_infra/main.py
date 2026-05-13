@@ -1,4 +1,3 @@
-from pynput import keyboard
 import subprocess
 import gc
 import mlx.core as mx
@@ -7,7 +6,11 @@ import time
 import threading
 import use_model
 from use_model import load_model, unload_model, run
-from live_activation import get_next_prompt
+
+# from live_activation import get_next_prompt
+"""
+
+
 
 def main():
     while True:
@@ -47,4 +50,6 @@ def main():
         if start - time.perf_counter() > 60:
             unload_model(model_container["model"], model_container["tokenizer"])
 
-main()
+"""
+load_model()
+run(" What is the issue in this code? ")

@@ -51,7 +51,4 @@ def run(prompt, max_tokens=5000):
     print()
     return response
 
-
 unload_model(model, tokenizer)
-model = None
-tokenizer = None
