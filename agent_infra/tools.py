@@ -16,18 +16,24 @@ OVERALL_BANNED_TERMINAL_USES = {
     "wget",
     "ssh",
     "scp",
-    "kill",
-    "pkill",
-    "killall",
     "shutdown",
     "reboot",
     "halt",
     "dd",
     "mkfs",
     "diskutil",
+    "installer",
+    "brew",
+    "pip",
+    "pip3",
+    "npm",
+    "npx",
+    "yarn",
+    "pnpm",
 }
 
-BANNED_SHELL_OPERATORS = (";", "&&", "||", "|", ">", "<", "`", "$(", "\n")
+BANNED_SHELL_OPERATORS = ()
+BANNED_TERMINAL_TOKENS = {"install", "uninstall", "upgrade", "update", "autoremove"}
 ### do memory later
 """
 def write_memory(text):
@@ -58,13 +64,18 @@ def terminal(line, timeout=30):
             return {"ok": False, "blocked": True, "error": f"Blocked shell operator: {operator}"}
 
     command = Path(args[0]).name
-    if command in OVERALL_BANNED_TERMINAL_USES:
-        return {"ok": False, "blocked": True, "error": f"Blocked command: {command}"}
+    tokens = {Path(arg).name.lower() for arg in args}
+    if tokens & OVERALL_BANNED_TERMINAL_USES:
+        return {"ok": False, "blocked": True, "error": f"Blocked command: {sorted(tokens & OVERALL_BANNED_TERMINAL_USES)[0]}"}
+    if tokens & BANNED_TERMINAL_TOKENS:
+        return {"ok": False, "blocked": True, "error": f"Blocked install/system token: {sorted(tokens & BANNED_TERMINAL_TOKENS)[0]}"}
 
     try:
         result = subprocess.run(
-            args,
+            line,
             cwd=WORKSPACE_ROOT,
+            shell=True,
+            executable="/bin/zsh",
             capture_output=True,
             text=True,
             timeout=timeout,
